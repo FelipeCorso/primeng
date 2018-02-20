@@ -262,6 +262,7 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterContentInit,AfterV
     }   
     
     isSelected(value) {
+        console.log(value);
         return this.findSelectionIndex(value) != -1;
     }
     

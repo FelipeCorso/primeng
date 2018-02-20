@@ -6,11 +6,15 @@ import {SelectItem} from '../../../components/common/api';
 })
 export class MultiSelectDemo {
 
-    cars: SelectItem[];
+    cars:SelectItem[];
 
-    selectedCars1: string[] = [];
-    
-    selectedCars2: string[] = [];
+    trucks:SelectItem[];
+
+    motorcycles:SelectItem[];
+
+    selectedCars1:string[] = [];
+
+    selectedCars2:string[] = [];
 
     constructor() {
         this.cars = [
@@ -25,5 +29,25 @@ export class MultiSelectDemo {
             {label: 'VW', value: 'VW'},
             {label: 'Volvo', value: 'Volvo'},
         ];
+
+
+        this.trucks = [];
+        this.addItems(this.trucks, "Truck ");
+        this.motorcycles = [];
+        this.addItems(this.motorcycles, "Motorcycle ");
     }
+
+    private addItems(list:SelectItem[], label:string):void {
+        for (let i = 0; i < 10; i++) {
+            list.push({
+                label: label + i,
+                value: {
+                    name: label + i,
+                    id: i
+                }
+            });
+        }
+    }
+
+
 }
